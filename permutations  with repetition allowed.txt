@@ -1,0 +1,18 @@
+#Generating m-permutations of a set of n elements with repetition allowed 
+k = 0
+n = int(input("Enter the value of n: "))
+m = int(input("\nEnter the length of the sequence m: "))
+print("\n")
+
+def generate(sequence):
+	global k
+	if len(sequence) == m:
+		print(*sequence, sep = "")
+		k +=1
+		return
+		
+	for i in range(1, n + 1):
+		generate(sequence + [i] )
+		
+generate( [] )
+print(f"\nThe number of {m}-permutations of a set of {n} elements with repetition allowed is ",k)
